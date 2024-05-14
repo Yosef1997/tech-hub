@@ -11,7 +11,7 @@ interface TeamCardProps {
 
 const TeamCard: React.FC<TeamCardProps> = ({ e }) => {
   return (
-    <div className='h-56 md:h-72'>
+    <div className='h-fit'>
       <div className='relative h-fit w-fit flex flex-col items-center'>
         <Image
           className='h-fit object-cover rounded-md'

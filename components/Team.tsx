@@ -1,8 +1,10 @@
 "use client"
 import React from "react"
-import Carousel from "react-multi-carousel"
 import TeamCard from "./TeamCard"
-import responsive from "../utils/CarouselResponsive"
+import { Swiper, SwiperSlide } from "swiper/react"
+import "swiper/css"
+import "swiper/css/pagination"
+import { Pagination } from "swiper/modules"
 import useRandomUser from "../hooks/useRandomUser"
 import { useState } from "react"
 import ModalTeam from "./ModalTeam"
@@ -42,23 +44,45 @@ const Team = () => {
         })}
       </div>
 
-      <div aria-hidden='true' className='md:hidden'>
-        <Carousel responsive={responsive.responsive} arrows={false}>
+      <div aria-hidden='true' className='h-fit md:hidden'>
+        <Swiper
+          slidesPerView={2}
+          spaceBetween={10}
+          pagination={{
+            clickable: true,
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 5,
+              spaceBetween: 50,
+            },
+          }}
+          modules={[Pagination]}
+        >
           {users.map((e, i) => {
             return (
-              <div key={i} className='ml-5' onClick={() => toggleModal(i)}>
-                <TeamCard
-                  key={i}
-                  e={{
-                    image: e.picture.large,
-                    name: `${e.name.first} ${e.name.last}`,
-                    position: e.position,
-                  }}
-                />
-              </div>
+              <SwiperSlide key={i} className='pt-10 pb-20'>
+                <div className='ml-5' onClick={() => toggleModal(i)}>
+                  <TeamCard
+                    e={{
+                      image: e.picture.large,
+                      name: `${e.name.first} ${e.name.last}`,
+                      position: e.position,
+                    }}
+                  />
+                </div>
+              </SwiperSlide>
             )
           })}
-        </Carousel>
+        </Swiper>
       </div>
 
       {showModal ? (

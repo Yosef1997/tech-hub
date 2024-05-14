@@ -2,9 +2,11 @@
 import React from "react"
 import products from "@/utils/Products"
 import ProductCard from "./ProductCard"
-import Carousel from "react-multi-carousel"
-import "react-multi-carousel/lib/styles.css"
-import responsive from "@/utils/CarouselResponsive"
+import { Swiper, SwiperSlide } from "swiper/react"
+import "swiper/css"
+import "swiper/css/pagination"
+import "swiper/css/navigation"
+import { Parallax, Pagination, Navigation } from "swiper/modules"
 import { useState } from "react"
 import Link from "next/link"
 import { StaticImageData } from "next/image"
@@ -35,7 +37,7 @@ const Products: React.FC<{ showNavigation?: boolean }> = ({
         <p className='text-orange md:text-lg font-semibold shadow-black [text-shadow:_1px_1px_1px_var(--tw-shadow-color)]'>
           PROFESSIONAL SERVICE
         </p>
-        <p className='text-lg text-center md:text-3xl'>
+        <p className='text-sm text-center md:text-3xl'>
           We do Professional Services Offers in <br /> the IT Sector
         </p>
         <div className='hidden md:grid md:grid-cols-3 gap-10 mt-10'>
@@ -56,35 +58,36 @@ const Products: React.FC<{ showNavigation?: boolean }> = ({
       </div>
 
       <div aria-hidden='true' className='md:hidden w-full'>
-        <Carousel
-          responsive={responsive.responsive}
-          arrows={false}
-          containerClass='h-40'
-          showDots
+        <Swiper
+          speed={600}
+          parallax={true}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Parallax, Pagination, Navigation]}
         >
+          <div slot='container-start' data-swiper-parallax='-23%'></div>
           {products.map((e, i) => {
             return (
-              <div
-                key={i}
-                onClick={() => toggleModal(i)}
-                className='ml-2 md:ml-5'
-              >
-                <ProductCard
-                  props={{
-                    image: e.image,
-                    name: e.name,
-                    description: e.description,
-                  }}
-                />
-              </div>
+              <SwiperSlide key={i} className='pb-10'>
+                <div onClick={() => toggleModal(i)} className='mx-5'>
+                  <ProductCard
+                    props={{
+                      image: e.image,
+                      name: e.name,
+                      description: e.description,
+                    }}
+                  />
+                </div>
+              </SwiperSlide>
             )
           })}
-        </Carousel>
+        </Swiper>
       </div>
 
       {showNavigation ? (
         <Link
-          className='bg-orange text-black p-3 md:p-5 rounded-md font-medium md:mt-10'
+          className='bg-orange text-black p-2 rounded-md font-medium max-md:text-sm md:p-5 md:mt-10'
           href={"/products"}
         >
           View All Services

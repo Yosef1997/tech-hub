@@ -4,9 +4,11 @@ import { BiChevronRight } from "react-icons/bi"
 import { BiChevronLeft } from "react-icons/bi"
 import testimonies from "../utils/Testimonies"
 import { useEffect, useState } from "react"
-import Carousel from "react-multi-carousel"
-import "react-multi-carousel/lib/styles.css"
-import responsive from "../utils/CarouselResponsive"
+import { Swiper, SwiperSlide } from "swiper/react"
+import "swiper/css"
+import "swiper/css/pagination"
+import "swiper/css/navigation"
+import { Parallax, Pagination, Navigation } from "swiper/modules"
 import Image, { StaticImageData } from "next/image"
 import defProfile from "@/public/assets/def-profile.webp"
 
@@ -68,28 +70,33 @@ const Testimony = () => {
         />
       </div>
       <div className='md:hidden'>
-        <Carousel
-          aria-hidden='true'
-          responsive={responsive.responsive}
-          arrows={false}
+        <Swiper
+          speed={600}
+          parallax={true}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Parallax, Pagination, Navigation]}
         >
+          <div slot='container-start' data-swiper-parallax='-23%'></div>
           {testimonies.map((e, i) => {
             return (
-              <div
-                key={i}
-                className='flex flex-col gap-y-2 items-center border rounded-xl p-5 ml-5'
-              >
-                <Image
-                  className='h-20 w-full rounded-xl object-contain'
-                  src={e.image}
-                  alt={`testimony-image-${e.name}`}
-                />
-                <p className='font-semibold line-clamp-1'>{e.name}</p>
-                <p className='line-clamp-4 text-sm'>{e.testi}</p>
-              </div>
+              <SwiperSlide key={i} className='pb-10'>
+                <div className='flex flex-col gap-y-2 items-center border rounded-xl p-5 mx-5'>
+                  <Image
+                    className='h-28 w-auto rounded-xl object-contain'
+                    height={300}
+                    width={300}
+                    src={e.image}
+                    alt={`testimony-image-${e.name}`}
+                  />
+                  <p className='font-semibold line-clamp-1'>{e.name}</p>
+                  <p className='line-clamp-4 text-sm'>{e.testi}</p>
+                </div>
+              </SwiperSlide>
             )
           })}
-        </Carousel>
+        </Swiper>
       </div>
     </div>
   )

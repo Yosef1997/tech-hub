@@ -13,9 +13,9 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      {/* <Hero /> */}
+      <Hero />
       <div className='mx-auto w-fit mb-5 md:mb-20'>
-        <p className='text-black text-2xl font-bold'>
+        <p className='text-black md:text-2xl font-bold'>
           {`\"Empowering Tomorrow, Today.\"`}
         </p>
       </div>
