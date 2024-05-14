@@ -6,13 +6,11 @@ import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css"
 import responsive from "@/utils/CarouselResponsive"
 import { useState } from "react"
-import { AiOutlineCloseCircle } from "react-icons/ai"
-import { MdRadioButtonChecked } from "react-icons/md"
 import Link from "next/link"
-import Image, { StaticImageData } from "next/image"
-import defProfile from "@/public/assets/def-profile.webp"
+import { StaticImageData } from "next/image"
+import ModalProduct from "./ModalProduct"
 
-type product = {
+export type product = {
   name: string
   description: string
   image: StaticImageData
@@ -24,11 +22,11 @@ const Products: React.FC<{ showNavigation?: boolean }> = ({
   showNavigation,
 }) => {
   const [showModal, setShowModal] = useState<boolean>(false)
-  const [product, setProduct] = useState<product>()
+  const [productId, setProductId] = useState<number>(0)
 
-  const toggleModal = (value?: product) => {
+  const toggleModal = (value: number) => {
     setShowModal(!showModal)
-    if (!showModal) setProduct(value)
+    if (!showModal) setProductId(value)
   }
 
   return (
@@ -43,7 +41,7 @@ const Products: React.FC<{ showNavigation?: boolean }> = ({
         <div className='hidden md:grid md:grid-cols-3 gap-10 mt-10'>
           {products.map((e, i) => {
             return (
-              <div key={i} onClick={() => toggleModal(e)}>
+              <div key={i} onClick={() => toggleModal(i)}>
                 <ProductCard
                   props={{
                     image: e.image,
@@ -68,7 +66,7 @@ const Products: React.FC<{ showNavigation?: boolean }> = ({
             return (
               <div
                 key={i}
-                onClick={() => toggleModal(e)}
+                onClick={() => toggleModal(i)}
                 className='ml-2 md:ml-5'
               >
                 <ProductCard
@@ -94,58 +92,14 @@ const Products: React.FC<{ showNavigation?: boolean }> = ({
       ) : null}
 
       {showModal ? (
-        <div
-          aria-hidden='true'
-          className='fixed bg-grey bg-opacity-70 top-0 bottom-0 right-0 left-0 p-5 z-50 md:p-10'
-        >
-          <div className=' relative bg-white h-full p-5 md:p-20 rounded-xl'>
-            <div className='flex flex-col justify-center items-center gap-x-5 md:gap-x-20'>
-              <Image
-                className='h-24 md:h-40 w-auto rounded-xl'
-                height={500}
-                width={500}
-                src={product ? product.image : defProfile}
-                alt={`${product?.name}-image`}
-              />
-              <p className='text-lg md:text-2xl font-bold'>{product?.name}</p>
-            </div>
-            <div className='mt-5'>
-              <p className='text-xs md:text-2xl '>{product?.description}</p>
-            </div>
-            <div className=' mt-5 grid grid-cols-1 md:grid-cols-2 md:mt-10'>
-              <div>
-                <p className='font-semibold mb-2 max-md:text-xs'>Advantages:</p>
-                {product?.advantages.map((e, i) => {
-                  return (
-                    <div key={i} className='flex items-start gap-x-1'>
-                      <MdRadioButtonChecked size={20} color='black' />
-                      <p className='max-md:text-xs'>{e}</p>
-                    </div>
-                  )
-                })}
-              </div>
-              <div>
-                <p className='font-semibold my-2 max-md:text-xs'>
-                  Specification:
-                </p>
-                {product?.specifications.map((e, i) => {
-                  return (
-                    <div key={i} className='flex items-start gap-x-2'>
-                      <MdRadioButtonChecked size={20} color='black' />
-                      <p className='max-md:text-xs'>{e}</p>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
-            <button
-              onClick={() => toggleModal()}
-              className='absolute top-1 right-1 md:top-20 md:right-20 w-fit text-start '
-            >
-              <AiOutlineCloseCircle size={40} />
-            </button>
-          </div>
-        </div>
+        <ModalProduct
+          picture={products[productId].image}
+          name={products[productId].name}
+          description={products[productId].description}
+          advantages={products[productId].advantages}
+          specifications={products[productId].specifications}
+          onClick={() => toggleModal(0)}
+        />
       ) : null}
     </div>
   )

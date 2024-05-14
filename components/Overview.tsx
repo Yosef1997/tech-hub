@@ -1,7 +1,6 @@
 import React from "react"
 import { GiHabitatDome } from "react-icons/gi"
 import { BiHistory } from "react-icons/bi"
-import HeroCard from "./HeroCard"
 
 const Overview = () => {
   return (
