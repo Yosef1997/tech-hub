@@ -16,7 +16,7 @@ export default function Home() {
       <Hero />
       <div className='mb-5 md:mb-20'>
         <h1 className='text-black text-lg md:text-4xl font-bold text-center'>
-          "Empowering Tomorrow, Today."
+          {`\"Empowering Tomorrow, Today.\"`}
         </h1>
       </div>
       <Overview />
