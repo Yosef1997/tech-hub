@@ -6,7 +6,7 @@ import milestoneMobile from "@/public/assets/milestone-mobile.png"
 const Milestone = () => {
   return (
     <div className='pt-5 md:pt-20'>
-      <h1 className='text-orange md:text-3xl font-bold text-center'>
+      <h1 className='text-black md:text-3xl font-bold text-center'>
         Milestone
       </h1>
       <Image
