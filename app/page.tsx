@@ -13,11 +13,11 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <Hero />
-      <div className='mb-5 md:mb-20'>
-        <h1 className='text-black text-lg md:text-4xl font-bold text-center'>
+      {/* <Hero /> */}
+      <div className='mx-auto w-fit mb-5 md:mb-20'>
+        <p className='text-black text-2xl font-bold'>
           {`\"Empowering Tomorrow, Today.\"`}
-        </h1>
+        </p>
       </div>
       <Overview />
       <Team />

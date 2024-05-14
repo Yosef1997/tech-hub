@@ -1,9 +1,9 @@
-import server from "@/public/assets/server.jpg"
-import cloudService from "@/public/assets/cloud-service.jpg"
-import webDev from "@/public/assets/web-development.jpg"
-import itManagment from "@/public/assets/about-hero.jpg"
-import softwareRenew from "@/public/assets/software.jpg"
-import ai from "@/public/assets/ai.jpg"
+import server from "@/public/assets/server.webp"
+import cloudService from "@/public/assets/cloud-service.webp"
+import webDev from "@/public/assets/web-development.webp"
+import itManagment from "@/public/assets/about-hero.webp"
+import softwareRenew from "@/public/assets/software.webp"
+import ai from "@/public/assets/ai.webp"
 
 const products = [
   {

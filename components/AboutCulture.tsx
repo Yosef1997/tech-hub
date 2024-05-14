@@ -1,7 +1,7 @@
 import React from "react"
 import { MdRadioButtonChecked } from "react-icons/md"
 import culture from "@/utils/Culture"
-import building from "@/public/assets/gedung-techhub.png"
+import building from "@/public/assets/building.webp"
 import Image from "next/image"
 
 const AboutCulture = () => {
@@ -12,7 +12,7 @@ const AboutCulture = () => {
       </h2>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-x-5'>
         <Image
-          className='h-[300px] md:h-[600px] w-full object-contain'
+          className='h-[300px] md:h-[600px] w-full object-cover rounded-lg'
           src={building}
           alt='building'
         />

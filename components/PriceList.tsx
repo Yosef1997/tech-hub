@@ -32,7 +32,7 @@ const PriceList = () => {
           )
         })}
       </div>
-      <div className='py-5 md:hidden'>
+      <div aria-hidden='true' className='py-5 md:hidden'>
         <Carousel responsive={responsive.responsivePrice} arrows={false}>
           {priceList.map((e, i) => {
             return (

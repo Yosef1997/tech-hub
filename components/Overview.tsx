@@ -5,12 +5,10 @@ import HeroCard from "./HeroCard"
 
 const Overview = () => {
   return (
-    <div className='bg-overview-bg bg-center bg-cover text-white py-5 px-5 md:px-20'>
-      <h1 className=' text-center font-bold md:text-2xl'>
-        History and Culture
-      </h1>
+    <div className='flex flex-col items-center bg-overview-bg bg-center bg-cover text-white py-5 px-5 w-full h-fit md:px-20'>
+      <p className='font-bold md:text-2xl w-fit'>History and Culture</p>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-y-5 mt-10 md:gap-x-20'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-y-5 mt-5 md:mt-10 md:gap-x-20'>
         <div>
           <span className='flex items-center gap-x-2 mb-5'>
             <BiHistory size={25} />

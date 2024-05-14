@@ -1,9 +1,9 @@
-import salmon from "@/public/assets/salmon.jpg"
-import mackerel from "@/public/assets/mackerel.jpg"
-import dolphin from "@/public/assets/dolphin.jpg"
-import whiteWahle from "@/public/assets/white-whale.jpg"
-import lobster from "@/public/assets/lobster.jpg"
-import seahorses from "@/public/assets/seahorses.jpg"
+import salmon from "@/public/assets/salmon.webp"
+import mackerel from "@/public/assets/mackerel.webp"
+import dolphin from "@/public/assets/dolphin.webp"
+import whiteWahle from "@/public/assets/white-whale.webp"
+import lobster from "@/public/assets/lobster.webp"
+import seahorses from "@/public/assets/seahorses.webp"
 
 const testimonies = [
   {

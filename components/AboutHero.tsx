@@ -1,16 +1,16 @@
 import React from "react"
-import aboutHero from "@/public/assets/about-hero.jpg"
+import aboutHero from "@/public/assets/about-hero.webp"
 import Image from "next/image"
 
 const AboutHero = () => {
   return (
     <div className='flex flex-col items-center bg-gradient-to-b from-black to-white p-5 md:p-20'>
-      <h1 className='text-white text-3xl text-center font-bold'>About Us</h1>
-      <h1 className='text-white text-sm md:text-xl text-center my-5 md:my-10'>
+      <p className='text-white text-3xl text-center font-bold'>About Us</p>
+      <p className='text-white text-sm md:text-xl text-center my-5 md:my-10'>
         TechHub empowers businesses to thrive in the digital age by delivering
         tailored technology solutions that drive innovation, efficiency, and
         growth.
-      </h1>
+      </p>
       <Image
         className='h-[300px] w-full object-cover rounded-xl  md:h-[500px] '
         src={aboutHero}
@@ -18,9 +18,9 @@ const AboutHero = () => {
       />
 
       <div className='bg-overview-bg bg-contain rounded-lg p-5 mt-5 md:mt-20 md:p-20 '>
-        <h2 className='text-white text-xl md:text-3xl font-semibold text-center mb-5 md:mb-10'>
+        <p className='text-white text-xl md:text-3xl font-semibold text-center mb-5 md:mb-10'>
           History and Founding
-        </h2>
+        </p>
         <p className='text-white text-sm md:text-base text-justify bg-black bg-opacity-25'>
           Established in 2010 by a group of passionate technologists, TechHub
           swiftly rose as a frontrunner in tech solutions, initially focusing on

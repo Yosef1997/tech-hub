@@ -25,36 +25,38 @@ const Footer = () => {
           </div>
         </div>
         <div className='md:col-span-1 pr-10'>
-          <h2 className='text-2xl font-medium'>Information</h2>
-          <p className='py-1.5'>
+          <h2 className='text-lg md:text-2xl font-medium'>Information</h2>
+          <p className='text-xs py-1.5'>
             Address: Hang Kesturi Street, Kabil, Nongsa, Batam, 29467{" "}
           </p>
-          <p className='py-1.5'>Phone: +62822-1111-2222</p>
-          <p className='py-1.5'>Mail: tech_hub@gmail.com</p>
+          <p className='text-xs py-1.5'>Phone: +62822-1111-2222</p>
+          <p className='text-xs py-1.5'>Mail: tech_hub@gmail.com</p>
         </div>
         <div className='flex flex-col'>
-          <h2 className='text-2xl font-medium'>Explore More</h2>
-          <Link className='py-1.5' href={"/about"}>
+          <h2 className='text-lg md:text-2xl font-medium'>Explore More</h2>
+          <Link className='text-xs py-1.5' href={"/about"}>
             About Us
           </Link>
-          <Link className='py-1.5' href={"/products"}>
+          <Link className='text-xs py-1.5' href={"/products"}>
             Products
           </Link>
-          <Link className='py-1.5' href={"/team"}>
+          <Link className='text-xs py-1.5' href={"/team"}>
             Our Team
           </Link>
         </div>
-        <div className='flex flex-col gap-y-2 items-center bg-orange p-5 rounded-lg md:col-span-2'>
-          <h2 className='text-2xl font-medium'>Newsletter</h2>
-          <p>Subscribe us to get information about discount</p>
+        <div className='flex flex-col gap-y-2 items-center bg-orange text-black p-5 rounded-lg md:col-span-2'>
+          <h2 className='text-lg md:text-xl font-medium'>Newsletter</h2>
+          <p className='text-sm text-center'>
+            Subscribe us to get information about discount
+          </p>
           <form
-            className='flex flex-col gap-y-2 items-center'
+            className='flex flex-col gap-y-2 items-center w-full'
             onSubmit={() => {
-              window.open("https://www.pornhub.com/")
+              alert("Thank you for subscribing")
             }}
           >
             <input
-              className='p-2 rounded-lg focus:outline-none text-black'
+              className='p-2 rounded-lg focus:outline-none text-black w-full'
               type='text'
               placeholder='example@gmail.com'
             />
@@ -68,8 +70,8 @@ const Footer = () => {
         </div>
       </div>
       <div className='flex flex-col gap-y-5 items-center border-t border-orange pt-5 mt-10  px-5 md:px-10 md:flex-row md:justify-between'>
-        <p className='text-sm'>Copyright @2024 TechHub. All Rights Reserved</p>
-        <div className='flex gap-x-3 md:gap-x-5 text-sm'>
+        <p className='text-xs'>Copyright @2010 TechHub. All Rights Reserved</p>
+        <div className='flex gap-x-3 md:gap-x-5 text-xs'>
           <Link href={"/"}>Privacy policy</Link>
           <Link href={"/"}>Cookie notice</Link>
           <Link href={"/"}>Terms of service</Link>

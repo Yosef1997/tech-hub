@@ -16,10 +16,10 @@ module.exports = {
     extend: {
       backgroundImage: {
         dot: "url('/assets/dot.png')",
-        "hero-bg": "url('/assets/hero-bg.jpg')",
-        "overview-bg": "url('/assets/overview-bg.jpg')",
-        "footer-bg": "url('/assets/footer-bg.jpg')",
-        "product-bg": "url('/assets/product-bg.png')",
+        "hero-bg": "url('/assets/hero-bg.webp')",
+        "overview-bg": "url('/assets/overview-bg.webp')",
+        "footer-bg": "url('/assets/footer-bg.webp')",
+        "product-bg": "url('/assets/product-bg.webp')",
       },
     },
   },

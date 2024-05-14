@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className='bg-black flex items-center justify-between px-5 py-2.5 md:px-20 md:py-5'>
+      <div className='bg-black flex items-center justify-between px-5 py-2.5 md:px-20 md:py-5 w-full'>
         <Image className='h-10 w-auto md:h-12' src={techHub} alt='tech-hub' />
 
         <div className='hidden gap-x-5 items-center bg-black text-white md:flex'>
