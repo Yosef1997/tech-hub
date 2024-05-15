@@ -34,13 +34,13 @@ const Footer = () => {
         </div>
         <div className='flex flex-col'>
           <h2 className='text-lg md:text-2xl font-medium'>Explore More</h2>
-          <Link className='text-sm max-md:py-2' href={"/about"}>
+          <Link className='text-sm w-fit py-2' href={"/about"}>
             About Us
           </Link>
-          <Link className='text-sm max-md:py-2' href={"/products"}>
+          <Link className='text-sm w-fit py-2' href={"/products"}>
             Products
           </Link>
-          <Link className='text-sm max-md:py-2' href={"/team"}>
+          <Link className='text-sm w-fit py-2' href={"/team"}>
             Our Team
           </Link>
         </div>
