@@ -11,11 +11,7 @@ const AboutHero = () => {
         tailored technology solutions that drive innovation, efficiency, and
         growth.
       </p>
-      <Image
-        className='h-[300px] w-full object-cover rounded-xl  md:h-[500px] '
-        src={aboutHero}
-        alt='about-hero'
-      />
+      <Image className='rounded-xl' src={aboutHero} alt='about-hero' />
 
       <div className='bg-overview-bg bg-contain rounded-lg p-5 mt-5 md:mt-20 md:p-20 '>
         <p className='text-white text-xl md:text-3xl font-semibold text-center mb-5 md:mb-10'>

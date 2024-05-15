@@ -13,8 +13,8 @@ const Footer = () => {
   return (
     <div className='bg-gradient-to-b from-grey to-black text-white py-10 md:py-20'>
       <div className='flex flex-col gap-y-10  md:grid md:grid-cols-5 p-5 md:p-10'>
-        <div className='md:col-span-1'>
-          <Image className='h-24 w-auto' src={techHub} alt='tech-hub' />
+        <div className='md:col-span-1 pr-5'>
+          <Image className='object-cover' src={techHub} alt='tech-hub' />
           <p className='text-md my-2 md:text-lg'>Build WorldClass Brand</p>
           <div className='flex gap-x-5'>
             <FaFacebookF size={20} />
@@ -32,7 +32,7 @@ const Footer = () => {
           <p className='text-xs py-1.5'>Phone: +62822-1111-2222</p>
           <p className='text-xs py-1.5'>Mail: tech_hub@gmail.com</p>
         </div>
-        <div className='flex flex-col'>
+        <div className='flex flex-col pr-5'>
           <h2 className='text-lg md:text-2xl font-medium'>Explore More</h2>
           <Link className='text-sm w-fit py-2' href={"/about"}>
             About Us

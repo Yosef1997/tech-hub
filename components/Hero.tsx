@@ -34,7 +34,7 @@ const Hero = () => {
                   </p>
                   <Link
                     href={"/about"}
-                    className=' flex items-center gap-x-3 text-xl font-medium text-black bg-orange px-5 py-2 rounded-lg w-fit'
+                    className='flex items-center gap-x-3 text-xl font-medium text-black bg-orange px-5 py-2 rounded-lg w-fit'
                   >
                     See Profile <BsArrowRightCircle size={20} color='black' />
                   </Link>
@@ -42,8 +42,6 @@ const Hero = () => {
                 <div className=' flex flex-col items-center justify-between'>
                   <Image
                     className='object-cover w-auto h-48 md:h-96 rounded-xl'
-                    height={500}
-                    width={500}
                     src={e.image}
                     placeholder='blur'
                     alt={`hero-image-${i}`}

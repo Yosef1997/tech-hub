@@ -13,11 +13,7 @@ const TeamHero = () => {
           management, cloud computing, web development, IT management, software
           renewal, and machine learning solutions.
         </p>
-        <Image
-          className='h-[300px] w-full object-cover rounded-xl  md:h-[500px] '
-          src={teamHero}
-          alt='team-hero'
-        />
+        <Image className='rounded-xl' src={teamHero} alt='team-hero' />
       </div>
 
       <div className='w-full mb-5 md:mb-20'>

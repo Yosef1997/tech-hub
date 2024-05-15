@@ -57,7 +57,7 @@ const Products: React.FC<{ showNavigation?: boolean }> = ({
         </div>
       </div>
 
-      <div aria-hidden='true' className='md:hidden w-full'>
+      <div className='md:hidden w-full'>
         <Swiper
           speed={600}
           parallax={true}
@@ -66,7 +66,7 @@ const Products: React.FC<{ showNavigation?: boolean }> = ({
           }}
           modules={[Parallax, Pagination, Navigation]}
         >
-          <div slot='container-start' data-swiper-parallax='-23%'></div>
+          <div slot='container-start' data-swiper-parallax='-23%' />
           {products.map((e, i) => {
             return (
               <SwiperSlide key={i} className='pb-10'>

@@ -34,7 +34,7 @@ const PriceList = () => {
           )
         })}
       </div>
-      <div aria-hidden='true' className='py-5 md:hidden'>
+      <div className='py-5 md:hidden'>
         <Swiper
           speed={600}
           parallax={true}
@@ -43,7 +43,7 @@ const PriceList = () => {
           }}
           modules={[Parallax, Pagination, Navigation]}
         >
-          <div slot='container-start' data-swiper-parallax='-23%'></div>
+          <div slot='container-start' data-swiper-parallax='-23%' />
           {priceList.map((e, i) => {
             return (
               <SwiperSlide key={i} className='pb-10'>

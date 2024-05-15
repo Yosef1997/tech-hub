@@ -64,7 +64,6 @@ const Testimony = () => {
         </div>
         <Image
           className='h-96 w-full rounded-3xl object-cover'
-          objectFit='contain'
           src={testimony ? testimony.image : defProfile}
           alt={`testimony-image-${testimony?.name}`}
         />

@@ -11,13 +11,19 @@ const AboutCulture = () => {
         Culture
       </h2>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-x-5'>
-        <Image className='rounded-lg' src={building} alt='building' />
-        <div className='flex flex-col gap-y-5'>
+        <div>
+          <Image
+            className='rounded-lg object-cover'
+            src={building}
+            alt='building'
+          />
+        </div>
+        <div className='flex flex-col justify-between'>
           {culture.map((e, i) => {
             return (
               <div key={i} className='flex items-start gap-x-2'>
                 <MdRadioButtonChecked size={35} color='black' />
-                <p className='font-bold text-base md:text-xl text-black'>
+                <p className='font-bold text-black'>
                   {e.title} <span className='font-normal'>{e.description}</span>
                 </p>
               </div>
