@@ -14,7 +14,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ props }) => {
   return (
     <div className='flex gap-x-3 items-start p-5 rounded-md bg-white shadow-lg hover:shadow-2xl'>
       <Image
-        className='h-14 w-14 rounded-md'
+        className='h-14 w-14 rounded-md object-cover'
         height={300}
         width={300}
         src={props.image}
