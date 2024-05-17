@@ -11,7 +11,7 @@ const Navbar = () => {
   const [showBurger, setShowBurger] = useState<boolean>(false)
 
   return (
-    <>
+    <div className='sticky top-0 z-10'>
       <div className='bg-black flex items-center justify-between px-5 py-2.5 md:px-20 md:py-5 w-full'>
         <Image className='h-10 w-auto md:h-12' src={techHub} alt='tech-hub' />
 
@@ -51,7 +51,7 @@ const Navbar = () => {
           })}
         </div>
       ) : null}
-    </>
+    </div>
   )
 }
 

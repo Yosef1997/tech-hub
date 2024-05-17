@@ -8,8 +8,19 @@ import { CgTwitter } from "react-icons/cg"
 import { FaFacebookF } from "react-icons/fa"
 import Image from "next/image"
 import techHub from "@/public/assets/tech-hub.png"
+import { Formik, Form, Field, FormikProps } from "formik"
+import * as yup from "yup"
+
+const SubscribeSchema = yup.object().shape({
+  email: yup
+    .string()
+    .email("Invalid email address format")
+    .required("Email is required"),
+})
 
 const Footer = () => {
+  const initialValues: { email: string } = { email: "" }
+
   return (
     <div className='bg-gradient-to-b from-grey to-black text-white py-10 md:py-20'>
       <div className='flex flex-col gap-y-10  md:grid md:grid-cols-5 p-5 md:p-10'>
@@ -49,24 +60,40 @@ const Footer = () => {
           <p className='text-sm text-center'>
             Subscribe us to get information about discount
           </p>
-          <form
-            className='flex flex-col gap-y-2 items-center w-full'
-            onSubmit={() => {
-              alert("Thank you for subscribing")
+          <Formik
+            initialValues={initialValues}
+            validationSchema={SubscribeSchema}
+            onSubmit={async (values) => {
+              alert(`Thank you for subscribing:  \n ${values.email}`)
             }}
           >
-            <input
-              className='p-2 rounded-lg focus:outline-none text-black w-full'
-              type='text'
-              placeholder='example@gmail.com'
-            />
-            <button
-              className='bg-white text-black w-full rounded-lg p-2 font-medium'
-              type='submit'
-            >
-              Subscribe
-            </button>
-          </form>
+            {(props: FormikProps<{ email: string }>) => {
+              const { values, errors, touched, handleChange } = props
+              return (
+                <Form className='flex flex-col gap-y-4'>
+                  <div className='flex flex-col '>
+                    <Field
+                      className='p-2 rounded-lg focus:outline-none text-black w-full'
+                      type='email'
+                      name='email'
+                      onChange={handleChange}
+                      value={values.email}
+                      placeholder='Email'
+                    />
+                    {touched.email && errors.email ? (
+                      <div className=' text-xs mt-1'>{errors.email}</div>
+                    ) : null}
+                  </div>
+                  <button
+                    className='bg-white text-black w-full rounded-lg p-2 font-medium'
+                    type='submit'
+                  >
+                    Subscribe
+                  </button>
+                </Form>
+              )
+            }}
+          </Formik>
         </div>
       </div>
       <div className='flex flex-col gap-y-5 items-center border-t border-orange pt-5 mt-10  px-5 md:px-10 md:flex-row md:justify-between'>
