@@ -32,8 +32,8 @@ const AboutHero = () => {
             vision of innovation, TechHub ventured into cloud computing in 2015,
             propelling it to industry prominence. The company serves a diverse
             clientele, from startups to multinationals, and continues to
-            innovate with machine learning applications. TechHub's global reach
-            and commitment to excellence make it a trusted partner for
+            innovate with machine learning applications. TechHub&apos;s global
+            reach and commitment to excellence make it a trusted partner for
             businesses aiming to leverage technology for growth and success.
           </p>
         </div>
