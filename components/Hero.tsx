@@ -41,10 +41,10 @@ const Hero = () => {
                 </div>
                 <div className=' flex flex-col items-center justify-between'>
                   <Image
-                    className='object-cover w-auto h-48 md:h-96 rounded-xl'
+                    className='object-cover  rounded-xl'
                     src={e.image}
-                    placeholder='blur'
                     alt={`hero-image-${i}`}
+                    priority
                   />
                 </div>
                 <div className='flex flex-col gap-y-5 justify-center md:hidden'>

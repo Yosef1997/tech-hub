@@ -8,12 +8,13 @@ import "swiper/css/pagination"
 import "swiper/css/navigation"
 import { Parallax, Pagination, Navigation } from "swiper/modules"
 import PriceCard from "./PriceCard"
+import { CardMotion } from "."
 
 const PriceList = () => {
   const [plan, setPlan] = useState<number>(1)
 
   return (
-    <>
+    <CardMotion>
       <div className='hidden gap-10 p-20 md:grid md:grid-cols-3'>
         {priceList.map((e, i) => {
           return (
@@ -67,7 +68,7 @@ const PriceList = () => {
           })}
         </Swiper>
       </div>
-    </>
+    </CardMotion>
   )
 }
 
