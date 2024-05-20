@@ -103,7 +103,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ onClick, i, plan, e }) => {
           i == plan ? "bg-orange text-black" : "bg-black text-white"
         } font-semibold p-2 rounded-md`}
       >
-        See All Features
+        Select Plan
       </button>
     </div>
   )
