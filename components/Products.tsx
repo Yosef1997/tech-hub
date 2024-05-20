@@ -86,16 +86,15 @@ const Products: React.FC<{ showNavigation?: boolean }> = ({
             })}
           </Swiper>
         </div>
-
-        {showNavigation ? (
-          <Link
-            className='bg-orange text-black p-2 rounded-md font-medium max-md:text-sm md:p-5 md:mt-10'
-            href={"/products"}
-          >
-            View All Services
-          </Link>
-        ) : null}
       </CardMotion>
+      {showNavigation ? (
+        <Link
+          className='bg-orange text-black p-2 rounded-md font-medium max-md:text-sm md:p-5 md:mt-10'
+          href={"/products"}
+        >
+          View All Services
+        </Link>
+      ) : null}
       {showModal ? (
         <ModalProduct
           picture={products[productId].image}

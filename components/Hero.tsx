@@ -45,6 +45,7 @@ const Hero = () => {
                     src={e.image}
                     placeholder='blur'
                     alt={`hero-image-${i}`}
+                    priority={true}
                   />
                 </div>
                 <div className='flex flex-col gap-y-5 justify-center md:hidden'>
