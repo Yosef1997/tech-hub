@@ -18,9 +18,13 @@ const ProductsHero = () => {
             software renewal, and machine learning solutions.
           </p>
           <Image
-            className='h-[300px] w-full object-contain rounded-xl md:h-[500px] '
+            className='h-[300px] w-auto mx-auto object-contain rounded-xl md:h-[500px] '
             src={overview}
             alt='products-hero'
+            width={600}
+            height={400}
+            priority
+            quality={75}
           />
         </div>
 

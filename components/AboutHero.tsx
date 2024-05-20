@@ -14,7 +14,16 @@ const AboutHero = () => {
           growth.
         </p>
 
-        <Image className='rounded-xl' src={aboutHero} alt='about-hero' />
+        <Image
+          className='rounded-xl'
+          src={aboutHero}
+          alt='about-hero'
+          width={600}
+          height={400}
+          priority
+          layout='responsive'
+          sizes='(max-width: 600px) 100vw, 600px'
+        />
 
         <div className='bg-overview-bg bg-contain rounded-lg p-5 mt-5 md:mt-20 md:p-20 '>
           <p className='text-white text-xl md:text-3xl font-semibold text-center mb-5 md:mb-10'>

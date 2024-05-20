@@ -26,7 +26,7 @@ const Hero = () => {
       >
         {hero.map((e, i) => {
           return (
-            <SwiperSlide key={i} className='pb-10'>
+            <SwiperSlide key={i} className='pb-5'>
               <div className='grid grid-cols-1 gap-y-5 p-5 md:gap-x-20 md:p-20 md:grid-cols-2'>
                 <div className='hidden md:flex flex-col gap-y-5 justify-center'>
                   <p className='bg-grey bg-opacity-5 max-md:text-sm font-bold text-white rounded-xl '>
@@ -41,11 +41,14 @@ const Hero = () => {
                 </div>
                 <div className=' flex flex-col items-center justify-between'>
                   <Image
-                    className='object-cover w-auto h-48 md:h-96 rounded-xl'
+                    className='object-cover  rounded-xl'
                     src={e.image}
-                    placeholder='blur'
                     alt={`hero-image-${i}`}
-                    priority={true}
+                    width={600}
+                    height={400}
+                    priority
+                    layout='responsive'
+                    sizes='(max-width: 600px) 100vw, 600px'
                   />
                 </div>
                 <div className='flex flex-col gap-y-5 justify-center md:hidden'>

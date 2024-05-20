@@ -15,7 +15,16 @@ const TeamHero = () => {
             center management, cloud computing, web development, IT management,
             software renewal, and machine learning solutions.
           </p>
-          <Image className='rounded-xl' src={teamHero} alt='team-hero' />
+          <Image
+            className='rounded-xl'
+            src={teamHero}
+            alt='team-hero'
+            width={600}
+            height={400}
+            priority
+            layout='responsive'
+            sizes='(max-width: 600px) 100vw, 600px'
+          />
         </div>
 
         <div className='w-full mb-5 md:mb-20'>

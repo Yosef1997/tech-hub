@@ -90,6 +90,7 @@ const Testimony = () => {
                       width={300}
                       src={e.image}
                       alt={`testimony-image-${e.name}`}
+                      quality={75}
                     />
                     <p className='font-semibold line-clamp-1'>{e.name}</p>
                     <p className='line-clamp-4 text-sm'>{e.testi}</p>
